@@ -3,7 +3,9 @@ import App from "./App";
 
 test("Button has correct initial color", () => {
   render(<App />);
-  screen.getByRole('button', {name: 'Change to blue'})
+
+  const colorButton = screen.getByRole("button", { name: "Change to blue" });
+
+  expect(colorButton).toHaveStyle({ backgroundColor: "red" });
 });
-test("Button has correct initial text", () => {});
-test("Button turns blue when clicked");
+test("Button turns blue when clicked", () => {});
