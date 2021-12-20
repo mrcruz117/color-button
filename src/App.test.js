@@ -4,21 +4,25 @@ import App, { replaceCamelCaseWithSpaces } from "./App";
 test("Button has correct initial color", () => {
   render(<App />);
 
-  const colorButton = screen.getByRole("button", { name: "Change to blue" });
+  const colorButton = screen.getByRole("button", {
+    name: "Change to Midnight Blue",
+  });
 
-  expect(colorButton).toHaveStyle({ backgroundColor: "red" });
+  expect(colorButton).toHaveStyle({ backgroundColor: "MediumVioletRed" });
 
   // click button
   fireEvent.click(colorButton);
-  expect(colorButton).toHaveStyle({ backgroundColor: "blue" });
-  expect(colorButton.textContent).toBe("Change to red");
+  expect(colorButton).toHaveStyle({ backgroundColor: "MidnightBlue" });
+  expect(colorButton).toHaveTextContent("Change to Medium Violet Red");
 });
 
 test("Initial conditions", () => {
   render(<App />);
 
   // button starts out enabled
-  const colorButton = screen.getByRole("button", { name: "Change to blue" });
+  const colorButton = screen.getByRole("button", {
+    name: "Change to Midnight Blue",
+  });
   expect(colorButton).toBeEnabled();
 
   // checkbox starts unchecked
